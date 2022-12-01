@@ -22,6 +22,13 @@ Router.map(function() {
   this.route('controller-injections-2', function () {
     this.route('child-route');
   });
+  this.route('controller-injections-3', function () {
+    this.route('child-route');
+  });
+  this.route('controller-injections-4', function () {
+    this.route('route-1');
+    this.route('route-2');
+  });
 });
 
 export default Router;
