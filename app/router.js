@@ -29,6 +29,7 @@ Router.map(function() {
     this.route('route-1');
     this.route('route-2');
   });
+  this.route('property-syntax');
 });
 
 export default Router;
