@@ -1,7 +1,7 @@
 <h1>Lack of public APIs, class instances mutating each other</h1>
 
 <p>
-  Number: {{this.number}}
+  Number: {{this._number}}
 </p>
 
 <p>
@@ -9,5 +9,5 @@
 </p>
 
 {{lack-of-public-apis/component
-  model=this
+  number=_number randomize=(action "randomize")
 }}
