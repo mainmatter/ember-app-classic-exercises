@@ -1,0 +1,31 @@
+<h1>Render syntax</h1>
+
+<h2>Parent controller</h2>
+
+<p>
+  Normal outlet:
+</p>
+
+<div
+  id="child-route-container"
+  style="
+    border: 1px solid black;
+    padding: 10px;
+  "
+>
+  {{outlet}}
+</div>
+
+<p>
+  Named outlet "modal":
+</p>
+
+<div
+  id="modal-container"
+  style="
+    border: 1px solid black;
+    padding: 10px;
+  "
+>
+  {{outlet "modal"}}
+</div>

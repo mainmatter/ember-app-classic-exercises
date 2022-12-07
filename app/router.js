@@ -19,17 +19,25 @@ Router.map(function() {
   this.route('leaking-state');
   this.route('overriding-component-methods');
   this.route('controller-injections-1');
+
   this.route('controller-injections-2', function () {
     this.route('child-route');
   });
+
   this.route('controller-injections-3', function () {
     this.route('child-route');
   });
+
   this.route('controller-injections-4', function () {
     this.route('route-1');
     this.route('route-2');
   });
+
   this.route('property-syntax');
+
+  this.route('render-syntax', function () {
+    this.route('child-route');
+  });
 });
 
 export default Router;
