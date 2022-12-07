@@ -6,15 +6,12 @@ export default Component.extend({
   // This approach is OK for Ember integration tests, but don't use it in real life.
   layout: hbs`
     <button
-      {{action "randomize"}}
+      {{action this.randomize}}
     >
       Randomize
     </button>
   `,
 
-  actions: {
-    randomize() {
-      this.model.set('number', Math.random());
-    }
-  }
+  number: null, // Arg
+  randomize: null // Action () => void
 });
