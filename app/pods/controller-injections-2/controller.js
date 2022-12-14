@@ -1,10 +1,8 @@
-import Controller from '@ember/controller';
+import Controller from "@ember/controller";
 import { computed } from "@ember/object";
 
 export default Controller.extend({
-
-  data: computed(function() {
+  data: computed(function () {
     return Math.random();
   }),
-
 });
