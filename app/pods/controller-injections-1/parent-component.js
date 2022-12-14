@@ -12,7 +12,7 @@ export default Component.extend({
       Parent data: {{this.data}}
     </p>
 
-    {{yield}}
+    {{yield data}}
   `,
 
   data: computed(function() {
