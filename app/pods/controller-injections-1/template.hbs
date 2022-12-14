@@ -1,9 +1,8 @@
 <h1>Controller injections 1: component componsition</h1>
 
 
-{{#controller-injections-1/parent-component}}
-  Some code block
+{{#controller-injections-1/parent-component as |x y|}}
+  {{controller-injections-1/child-component a=x b=y}}
 {{/controller-injections-1/parent-component}}
 
 
-{{controller-injections-1/child-component}}

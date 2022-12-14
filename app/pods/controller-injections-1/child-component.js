@@ -1,6 +1,6 @@
-import Component from '@ember/component';
-import hbs from 'htmlbars-inline-precompile';
-import { computed } from '@ember/object';
+import Component from "@ember/component";
+import hbs from "htmlbars-inline-precompile";
+import { computed } from "@ember/object";
 
 export default Component.extend({
   // Component's tempalte is defined here to make exercise navigation easier.
@@ -15,11 +15,13 @@ export default Component.extend({
     <p>
       Child data modified: {{this.dataModified}}
     </p>
+    <p>a: {{a}}, b: {{b}}</p>
   `,
 
   dataOriginal: null, // Argument, number
-
-  dataModified: computed('dataOriginal', function () {
-    return this.get('dataOriginal') * 2;
+  a: null, //arg,
+  b: null, //arg
+  dataModified: computed("dataOriginal", function () {
+    return this.get("dataOriginal") * 2;
   }),
 });

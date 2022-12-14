@@ -1,6 +1,6 @@
-import Component from '@ember/component';
-import hbs from 'htmlbars-inline-precompile';
-import { computed } from '@ember/object';
+import Component from "@ember/component";
+import hbs from "htmlbars-inline-precompile";
+import { computed } from "@ember/object";
 
 export default Component.extend({
   // Component's tempalte is defined here to make exercise navigation easier.
@@ -12,10 +12,10 @@ export default Component.extend({
       Parent data: {{this.data}}
     </p>
 
-    {{yield data}}
+    {{yield 4 5}}
   `,
 
-  data: computed(function() {
+  data: computed(function () {
     return Math.random();
   }),
 });
