@@ -1,10 +1,7 @@
 import Controller from '@ember/controller';
-import { computed } from "@ember/object";
+import { inject as service } from "@ember/service";
 
 export default Controller.extend({
-
-  data: computed(function () {
-    return Math.random();
-  }),
+  myService: service("controller-injections-4"),
 
 });
