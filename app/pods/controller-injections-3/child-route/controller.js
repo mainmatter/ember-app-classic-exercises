@@ -1,15 +1,11 @@
-import Controller from '@ember/controller';
+import Controller from "@ember/controller";
 import { computed } from "@ember/object";
-import { readOnly } from '@ember/object/computed';
-import { inject as controller } from '@ember/controller';
+import { readOnly } from "@ember/object/computed";
 
 export default Controller.extend({
-  parentController: controller('controller-injections-3'),
+  dataOriginal: readOnly("model"), // Should be populated from parent route
 
-  dataOriginal: readOnly('parentController.data'), // Should be populated from parent route
-
-  dataModified: computed('dataOriginal', function () {
-    return this.get('dataOriginal') * 2;
+  dataModified: computed("dataOriginal", function () {
+    return this.get("dataOriginal") * 2;
   }),
-
 });
