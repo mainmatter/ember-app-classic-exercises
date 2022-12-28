@@ -38,6 +38,9 @@ Router.map(function() {
   this.route('render-syntax', function () {
     this.route('child-route');
   });
+
+  this.route('flattening-array-with-cps');
+  this.route('using-the-map-class');
 });
 
 export default Router;

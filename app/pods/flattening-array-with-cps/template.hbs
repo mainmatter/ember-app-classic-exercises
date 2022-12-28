@@ -1,0 +1,38 @@
+<h1>Owners</h1>
+
+<ul>
+  {{#each this.owners as |owner|}}
+    <li>
+      <h2>Owner {{owner.name}}'s pets</h2>
+
+      <ul>
+        {{#each owner.pets as |pet|}}
+          <li>
+            <h3>Pet {{pet.name}}</h3>
+          </li>
+        {{/each}}
+      </ul>
+    </li>
+  {{/each}}
+</ul>
+
+
+
+<h1>All pets</h1>
+
+<ul>
+  {{#each this.allPets as |pet|}}
+    <li>
+      <h2>Pet {{pet.name}}</h2>
+    </li>
+  {{/each}}
+</ul>
+
+<p>
+  <button
+    type="button"
+    {{action "addPet"}}
+  >
+    Add Pet
+  </button>
+</p>
