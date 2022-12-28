@@ -9,11 +9,13 @@ export default Controller.extend({
   model: null, // Populated from route
   owners: readOnly('model'),
 
+  allPetsArrays: computed("owners.@each.pets", function(){
+    return this.get("owners").mapBy("pets");
+  }),
 
-  allPets: computed('owners.@each.pets', function () {
+  allPets: computed('allPetsArrays.@each.[]', function () {
     return this
-      .get('owners')
-      .map((owner) => owner.pets)
+      .get('allPetsArrays')
       .flat()
       .sortBy('name');
   }),
