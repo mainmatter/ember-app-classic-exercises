@@ -11,16 +11,16 @@ export default Controller.extend({
 
   // { 'Bob' : { name: 'Bob'... } }
   ownersByName: computed('owners.@each.name', function () {
-    return this.get('owners').reduce((result, owner) => {
-      result[owner.name] = owner;
-      return result;
-    }, {});
+    return this.get('owners').reduce((newMap, owner) => {
+      newMap.set(owner.name, owner);
+      return newMap;
+    }, new Map());
   }),
 
   actions: {
     findBob() {
       const bob =
-        this.get('ownersByName.Bob');
+        this.get('ownersByName').get('Bob');
 
       alert(`
         Owner ${bob.name}
