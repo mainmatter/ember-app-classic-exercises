@@ -9,22 +9,17 @@ export default Controller.extend({
   model: null, // Populated from route
   owners: readOnly('model'),
 
-  // ownersById: computed('owners.@each.name', function () {
-  //   return this.get('owners').reduce((result, owner) => {
-  //     result[owner.name] = owner;
-  //     return result;
-  //   }, {});
-  // }),
+  ownersByName: computed('owners.@each.name', function () {
+    return this.get('owners').reduce((map, owner) => {
+      map.set(owner.name, owner);
+      return map;
+    }, new Map());
+  }),
 
   actions: {
     findBob() {
       const bob =
-        this
-          .get('owners')
-          .find((owner) => owner.name === 'Bob');
-
-      // const bob =
-      //   this.get('owners.bob');
+        this.get('ownersByName').get('Bob');
 
       alert(`
         Owner ${bob.name}
