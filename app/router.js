@@ -41,6 +41,7 @@ Router.map(function() {
 
   this.route('flattening-array-with-cps');
   this.route('using-the-map-class');
+  this.route('incorrect-cp-dependencies');
 });
 
 export default Router;

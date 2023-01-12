@@ -1,0 +1,59 @@
+<h1>Incorrect CP dependencies</h1>
+
+<h2>User</h2>
+
+<p>
+  First name:
+
+  <input
+    value={{this.firstName}}
+    oninput={{action "setFirstName"}}
+  />
+</p>
+
+<p>
+  Last name:
+
+  <input
+    value={{this.lastName}}
+    oninput={{action "setLastName"}}
+  />
+</p>
+
+<p>
+  Age:
+
+  <input
+    value={{this.age}}
+    type="number"
+    oninput={{action "setAge"}}
+  />
+</p>
+
+<p>
+  Full Name: {{this.fullName}}
+</p>
+
+
+<h2>Post</h2>
+
+<p>
+  Post title:
+
+  {{this.post.title}}
+</p>
+
+<p>
+  Post title capitalized:
+
+  {{this.postTitleCapitalized}}
+</p>
+
+{{!-- <p>
+  Post title:
+
+  <input
+    value={{this.post.title}}
+    oninput={{action "setPostTitle"}}
+  />
+</p> --}}
