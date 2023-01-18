@@ -1,16 +1,20 @@
 import Controller from '@ember/controller';
-import { computed } from '@ember/object';
 
 export default Controller.extend({
-  refresh: null,
-
-  value: computed('refresh', function () {
-    return Math.random();
-  }),
+  randomValue: null,
+  
+  generateRandomValue() {
+    return Math.random() * 3;
+  },
+  
+  init() {
+    this._super(...arguments);
+    this.set("randomValue", this.generateRandomValue());
+  },
 
   actions: {
     updateValue() {
-      this.notifyPropertyChange('refresh');
+      this.set("randomValue", this.generateRandomValue());
     },
   },
 });
