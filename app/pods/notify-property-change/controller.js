@@ -12,6 +12,11 @@ export default Controller.extend({
     return this.get('randomValue') * 2;
   }),
 
+  init() {
+    this._super(...arguments);
+    this.set('randomValue', this.getRandomValue());
+  },
+
   actions: {
     updateValue() {
       this.set('randomValue', this.getRandomValue());
